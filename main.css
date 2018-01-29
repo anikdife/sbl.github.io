@@ -1,8 +1,19 @@
-.menu{
+.menus{
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 3em;
-    box-shadow: 5px #e2d4d4;
+    box-shadow: 4px 4px 4px 4px #e4e0e0;
+    background: linear-gradient(white,#ebe8e8);
+    transition: all 1s;
+}
+.menus:hover{
+    height: 4em;
+}
+.menu{
+    background: radial-gradient(white,#ebe8e8);
+    margin: .5em;
+    padding: .5em;
+    border-radius: 1em;
 }
