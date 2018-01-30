@@ -16,4 +16,12 @@
     margin: .5em;
     padding: .5em;
     border-radius: 1em;
+    float: left;
+}
+.menu>li{
+    font-size: 0;
+    transition: all 1s;
+}
+.menu:hover .menu>li{
+    font-size: 1em;
 }
