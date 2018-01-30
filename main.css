@@ -12,16 +12,25 @@
     height: 4em;
 }
 .menu{
-    background: radial-gradient(white,#ebe8e8);
+    background: radial-gradient(white,#ebe1e1);
     margin: .5em;
     padding: .5em;
     border-radius: 1em;
     float: left;
+    list-style: none;
 }
-.menu>li{
+.menu li+li{
     font-size: 0;
     transition: all 1s;
 }
-.menu:hover .menu>li{
+.menu:hover li+li{
     font-size: 1em;
+    background: linear-gradient(white, #ece6e6);
+    margin: .5em;
+    padding: .5em;
+    border-radius: 1em;
+    list-style-type: none;
+    cursor: pointer;
+    padding-left: .5em;
+    margin-left: .5em;
 }
