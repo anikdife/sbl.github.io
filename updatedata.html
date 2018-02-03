@@ -47,15 +47,17 @@
     }
 
     function initClient() {
-      var API_KEY = '';  // TODO: Update placeholder with desired API key.
+        var API_KEY = 'AIzaSyA3Ot2TV-zCSEFf4vZi-ink_g7gRwBKsr4';  // TODO: Update placeholder with desired API key.
 
-      var CLIENT_ID = '';  // TODO: Update placeholder with desired client ID.
-
-      // TODO: Authorize using one of the following scopes:
-      //   'https://www.googleapis.com/auth/drive'
-      //   'https://www.googleapis.com/auth/drive.file'
-      //   'https://www.googleapis.com/auth/spreadsheets'
-      var SCOPE = '';
+        var CLIENT_ID = '424019927667-j88ap0oc7plvs3ej8r54tcb2gbalg0mk.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+  
+        // TODO: Authorize using one of the following scopes:
+        //   'https://www.googleapis.com/auth/drive'
+        //   'https://www.googleapis.com/auth/drive.file'
+        //   'https://www.googleapis.com/auth/drive.readonly'
+        //   'https://www.googleapis.com/auth/spreadsheets'
+        //   'https://www.googleapis.com/auth/spreadsheets.readonly'
+        var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
       gapi.client.init({
         'apiKey': API_KEY,
