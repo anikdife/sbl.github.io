@@ -36,6 +36,17 @@
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result.values);
+        var table=document.createComment('table');
+        for(var i=0;i<response.result.values.length;i++){
+            var tr=document.createElement('tr');
+            for(var j=0;j<8;j++){
+                var td=document.createElement('td');
+                td.innerHTML=response.result.values[i][j];
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        document.body.appendChild(table);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
