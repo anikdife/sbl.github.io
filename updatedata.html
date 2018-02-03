@@ -2,7 +2,7 @@
   <head></head>
   <body>
       <input type="text" class="name">
-      <input type="text" class="phone">
+      <input type="text" class="phone" onkeydown="inputData()">
     <!--
     BEFORE RUNNING:
     ---------------
@@ -15,6 +15,38 @@
        https://developers.google.com/sheets/api/quickstart/js#step_2_set_up_the_sample
     -->
     <script>
+    function inputData(){
+        var params = {
+        // The ID of the spreadsheet to retrieve data from.
+        spreadsheetId: '1Y-fvvwRysPS79bA9jhALWVbRMYEoo9Dc0lxpXWneF2Q',  // TODO: Update placeholder value.
+
+        // The A1 notation of the values to retrieve.
+        range: 'advocate!A2',  // TODO: Update placeholder value.
+
+        // How the input data should be interpreted.
+        valueInputOption: 'USER_ENTERED',  // TODO: Update placeholder value.
+      };
+
+      var valueRangeBody = {
+          "majorDimension":"ROWS",
+          "range":"advocate!A2",
+          "values":[
+              [
+                  "Allah"
+              ]
+          ]
+        // TODO: Add desired properties to the request body. All existing properties
+        // will be replaced.
+      };
+
+      var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
+      request.then(function(response) {
+        // TODO: Change code below to process the `response` object:
+        console.log(response.result);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+    }
     function makeApiCall() {
       var params = {
         // The ID of the spreadsheet to retrieve data from.
