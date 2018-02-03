@@ -2,7 +2,7 @@
   <head></head>
   <body>
       <input type="text" class="name">
-      <input type="text" class="phone" onkeydown="inputData()">
+      <input type="text" class="phone" onkeyup="inputData(event)">
     <!--
     BEFORE RUNNING:
     ---------------
@@ -16,7 +16,7 @@
     -->
     <script>
     function inputData(event){
-        if(event.keyCode!=9)return;
+        if(event.keyCode!=13)return;
         var params = {
         // The ID of the spreadsheet to retrieve data from.
         spreadsheetId: '1Y-fvvwRysPS79bA9jhALWVbRMYEoo9Dc0lxpXWneF2Q',  // TODO: Update placeholder value.
