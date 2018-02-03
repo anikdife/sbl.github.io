@@ -36,6 +36,7 @@
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result.values);
+        alert("you are okay");
         var table=document.createElement('table');
         for(var i=0;i<response.result.values.length;i++){
             var tr=document.createElement('tr');
