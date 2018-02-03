@@ -25,7 +25,7 @@
             {apiKey:api_key, clientId:CLIENT_ID,DISCOVERY_DOCS:DISCOVERY_DOCS,scope:SCOPES}
         ).then(function(){
             gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-            updateSigninStatus(gapi.getAuthInstance().isSignedIn().get());
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn().get());
             authorizeButton.onclick=handleAuthClick;
             signoutButton.onclick=handleSignoutClick;
         });
