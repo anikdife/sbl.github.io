@@ -39,8 +39,8 @@
     left: 20%;
     width: 60%;
     top: 5em;
-    box-shadow: 10px 5px -4px #888;
+    box-shadow: 10px 5px #888;
 }
-.bla>li{
+.bla>input{
     padding: .5em;
 }
