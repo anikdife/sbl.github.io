@@ -63,13 +63,6 @@
     <div class="getdata">
 
     </div>
-    <div class="bla">
-        <input type="text" placeholder="name"><br>
-        <input type="text" placeholder="phone"><br>
-        <input type="text" placeholder="address"><br>
-        <input type="text" placeholder="region"><br>
-        <input type="text" placeholder="more"><br>
-    </div>
     <div class="home1"></div>
     <div class="home2"></div>
     <div class="home3"></div>
@@ -88,7 +81,14 @@
     document.getElementsByClassName("home4")[0].style.height=height*.54+"px";
     document.getElementsByClassName("home5")[0].style.height=height*.29+"px";
     var showBLAInsert=function(){
-        document.getElementsByClassName("bla")[0].style.zIndex="1"; 
+      var fields=["name","phone","address","region","more"];
+      for (let i = 0; i < fields.length; i++) {
+        const element = fields[i];
+        var input=document.createElement("input");
+        input.setAttribute("placeholder",element);
+        input.setAttribute("style","width:90%;padding:1em;border-radius:1em;");
+        document.getElementsByClassName("home3")[0].appendChild(input);        
+      }
     }
 
 
