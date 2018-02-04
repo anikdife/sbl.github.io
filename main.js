@@ -21,7 +21,7 @@ var showBLAInsert=function(){
 };
 
 var insertBLAParticulars=function(event){
-  initClient();
+  makeApiCall();
   if(event.keyCode!=13)return;
     var params = {
     // The ID of the spreadsheet to retrieve data from.
