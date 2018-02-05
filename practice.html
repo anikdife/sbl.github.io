@@ -237,7 +237,7 @@
           };
           var request = gapi.client.sheets.spreadsheets.values.get(params);
           request.then(function(response) {
-            console.log(response.result.values);
+            //console.log(response.result.values);
             alert("you are okay");
             var table=document.createElement('table');
             for(var i=0;i<response.result.values.length;i++){
@@ -249,7 +249,7 @@
                 }
                 table.appendChild(tr);
             }
-            document.getElementsByClassName("subpagecontent3").appendChild(table);
+            document.getElementsByClassName("subpagecontent3")[0].appendChild(table);
           }, function(reason) {
             console.error('error: ' + reason.result.error.message);
           });
