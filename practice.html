@@ -171,7 +171,7 @@
 </head>
 <body>
     <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
-    <div class="g-signin2" onclick="handleSignInClick(event)">Signin</div>
+    <div class="g-signin2" onclick="handleSignInClick(event)"  data-onsuccess="onSignIn">Signin</div>
     
     <div class="menus">
         <div class="menu1">Case
@@ -287,18 +287,6 @@
         function updateSignInStatus(isSignedIn) {
           if (isSignedIn) {
             makeApiCall();
-            var profile = gapi.auth2.currentUser.get().getBasicProfile();
-            console.log(profile);
-            document.getElementsByClassName("menus")[0].style.display="block";
-            document.getElementsByClassName("pagecontent")[0].style.display="block";
-            document.getElementsByClassName("g-signin2")[0].style.display="none";
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            document.getElementsByClassName("menu4")[0].childNodes[0].setAttribute("src",profile.getImageUrl());
-            document.getElementsByClassName("menu4")[0].childNodes[2].innerHTML=profile.getEmail();
           }
         }
     
