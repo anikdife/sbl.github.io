@@ -8,12 +8,11 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
    .g-signin2{
-  width: 100%;
-}
-
-.g-signin2 > div{
-  margin: 0 auto;
-}
+    width: 100%;
+    }
+    .g-signin2 > div{
+    margin: 0 auto;
+    }
     </style>
 </head>
 <body>
@@ -29,7 +28,7 @@
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
     </script>
-    <a href="#" onclick="signOut();">Sign out</a>
+    <!--<a href="#" onclick="signOut();">Sign out</a>-->
     <script>
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
