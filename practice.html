@@ -7,9 +7,11 @@
     <meta name="google-signin-client_id" content="540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
-    g-signin2{
-        position: absolute;
-        left: 44%;
+    .g-signin2{
+    width: 100%;
+    }
+    .g-signin2 > div{
+    margin: 0 auto;
     }
     </style>
 </head>
@@ -31,6 +33,7 @@
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
           console.log('User signed out.');
+          document.getElementsByClassName("g-signin2")[0].style.display="block";
         });
       }
     </script>
