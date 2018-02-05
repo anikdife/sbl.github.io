@@ -287,7 +287,7 @@
         function updateSignInStatus(isSignedIn) {
           if (isSignedIn) {
             makeApiCall();
-            var profile = auth2.currentUser.get().getBasicProfile();
+            var profile = gapi.auth2.currentUser.get().getBasicProfile();
             console.log(profile);
             document.getElementsByClassName("menus")[0].style.display="block";
             document.getElementsByClassName("pagecontent")[0].style.display="block";
