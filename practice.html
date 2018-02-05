@@ -287,13 +287,7 @@
         function updateSignInStatus(isSignedIn) {
           if (isSignedIn) {
             makeApiCall();
-          }
-        }
-    
-        function handleSignInClick(event) {
-          gapi.auth2.getAuthInstance().signIn();
-          console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
-          if(gapi.auth2.getAuthInstance().isSignedIn.get()){
+            
             document.getElementsByClassName("menus")[0].style.display="block";
             document.getElementsByClassName("pagecontent")[0].style.display="block";
             document.getElementsByClassName("g-signin2")[0].style.display="none";
@@ -305,6 +299,10 @@
             document.getElementsByClassName("menu4")[0].childNodes[0].setAttribute("src",profile.getImageUrl());
             document.getElementsByClassName("menu4")[0].childNodes[2].innerHTML=profile.getEmail();
           }
+        }
+    
+        function handleSignInClick(event) {
+          gapi.auth2.getAuthInstance().signIn();
         }
     
         function handleSignOutClick(event) {
