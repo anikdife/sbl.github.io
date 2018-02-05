@@ -20,6 +20,9 @@
         left: 0;
         top: 0;
     }
+    .menus>div{
+        float: left;
+    }
     </style>
 </head>
 <body>
@@ -47,6 +50,7 @@
     <script>
         function onSignIn(googleUser) {
             document.getElementsByClassName("menus")[0].style.display="block";
+            document.getElementsByClassName("g-signin2")[0].style.display="block";
             var profile = googleUser.getBasicProfile();
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName());
