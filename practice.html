@@ -53,7 +53,7 @@
         document.getElementsByClassName("menus")[0].style.height=.1*document.documentElement.clientHeight+"px";
         function onSignIn(googleUser) {
             document.getElementsByClassName("menus")[0].style.display="block";
-            document.getElementsByClassName("g-signin2")[0].style.display="block";
+            document.getElementsByClassName("g-signin2")[0].style.display="none";
             var profile = googleUser.getBasicProfile();
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
             console.log('Name: ' + profile.getName());
