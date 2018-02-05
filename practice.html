@@ -27,6 +27,13 @@
         0 20px 0 -10px #eee, /* The third layer */
         0 20px 1px -9px rgba(0,0,0,0.15); /* The third layer shadow */
         }
+    .pagecontent{
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background: linear-gradient(white,lightgreen);
+    }
     .menus>div{
         float: left;
     }
@@ -99,11 +106,16 @@
             <div onclick="signOut()">Sign out</div>
         </div>
     </div>
+    <div class="pagecontent">
+
+    </div>
     <!--<a href="#" onclick="signOut();">Sign out</a>-->
     <script>
         document.getElementsByClassName("menus")[0].style.height=.1*document.documentElement.clientHeight+"px";
+        document.getElementsByClassName("pagecontent")[0].style.height=.88*document.documentElement.clientHeight+"px";
         function onSignIn(googleUser) {
             document.getElementsByClassName("menus")[0].style.display="block";
+            document.getElementsByClassName("pagecontent")[0].style.display="block";
             document.getElementsByClassName("g-signin2")[0].style.display="none";
             var profile = googleUser.getBasicProfile();
             console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -121,6 +133,7 @@
         console.log('User signed out.');
         document.getElementsByClassName("g-signin2")[0].style.display="block";
         document.getElementsByClassName("menus")[0].style.display="none";
+        document.getElementsByClassName("pagecontent")[0].style.display="none";
         });
       }
     </script>
