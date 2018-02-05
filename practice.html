@@ -41,22 +41,18 @@
     .menu1{
         position: absolute;
         left: 2%;
-        text-align: center;
     }
     .menu2{
         position: absolute;
         left: 15%;
-        text-align: center;
     }
     .menu3{
         position: absolute;
         left: 28%;
-        text-align: center;
     }
     .menu4{
         position: absolute;
         left: 80%;
-        text-align: center;
     }
     .menu1:hover,.menu2:hover,.menu3:hover,.menu4:hover{
         margin-right: 0;
@@ -111,7 +107,7 @@
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
             document.getElementsByClassName("menu4")[0].childNodes[0].setAttribute("src",profile.getImageUrl());
-            document.getElementsByClassName("menu4")[0].childNodes[1].innerHTML=profile.getEmail();
+            document.getElementsByClassName("menu4")[0].childNodes[2].innerHTML=profile.getEmail();  
             }
     </script>
     <script>
