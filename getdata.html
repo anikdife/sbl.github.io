@@ -1,17 +1,6 @@
 <html>
   <head></head>
   <body>
-    <!--
-    BEFORE RUNNING:
-    ---------------
-    1. If not already done, enable the Google Sheets API
-       and check the quota for your project at
-       https://console.developers.google.com/apis/api/sheets
-    2. Get access keys for your application. See
-       https://developers.google.com/api-client-library/javascript/start/start-js#get-access-keys-for-your-application
-    3. For additional information on authentication, see
-       https://developers.google.com/sheets/api/quickstart/js#step_2_set_up_the_sample
-    -->
     <script>
     function makeApiCall() {
       var params = {
@@ -42,17 +31,9 @@
 
     function initClient() {
       var API_KEY = 'AIzaSyA3Ot2TV-zCSEFf4vZi-ink_g7gRwBKsr4';  // TODO: Update placeholder with desired API key.
-
       var CLIENT_ID = '424019927667-j88ap0oc7plvs3ej8r54tcb2gbalg0mk.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
-
-      // TODO: Authorize using one of the following scopes:
-      //   'https://www.googleapis.com/auth/drive'
-      //   'https://www.googleapis.com/auth/drive.file'
-      //   'https://www.googleapis.com/auth/drive.readonly'
-      //   'https://www.googleapis.com/auth/spreadsheets'
-      //   'https://www.googleapis.com/auth/spreadsheets.readonly'
+      // TODO: Authorize using one of the following scopes:, 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.file','https://www.googleapis.com/auth/drive.readonly','https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/spreadsheets.readonly'
       var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
-
       gapi.client.init({
         'apiKey': API_KEY,
         'clientId': CLIENT_ID,
