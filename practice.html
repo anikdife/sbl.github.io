@@ -8,15 +8,14 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
     .signin{
-        
+        width:100%;
     }
     </style>
 </head>
 <body>
-    <!--<div class="g-signin2" data-onsuccess="onSignIn">Sign in</div>-->
-    <div class="signin" data-onsuccess="onSignIn">Sign in</div>
+    <div class="g-signin2" data-onsuccess="onSignIn">Sign in</div>
     <script>
-    document.getElementsByClassName("signin")[0].style.lineHeight=document.documentElement.clientHeight+"px";
+    //document.getElementsByClassName("signin")[0].style.lineHeight=document.documentElement.clientHeight+"px";
     function onSignIn(googleUser) {
         //document.getElementsByClassName("g-signin2")[0].style.display="none";
         var profile = googleUser.getBasicProfile();
