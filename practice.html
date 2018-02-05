@@ -292,6 +292,7 @@
     
         function handleSignInClick(event) {
           gapi.auth2.getAuthInstance().signIn();
+          console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
           if(gapi.auth2.getAuthInstance().isSignedIn.get()){
             document.getElementsByClassName("menus")[0].style.display="block";
             document.getElementsByClassName("pagecontent")[0].style.display="block";
