@@ -60,8 +60,9 @@
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
-          console.log('User signed out.');
-          document.getElementsByClassName("g-signin2")[0].style.display="block";
+        console.log('User signed out.');
+        document.getElementsByClassName("g-signin2")[0].style.display="block";
+        document.getElementsByClassName("menus")[0].style.display="none";
         });
       }
     </script>
