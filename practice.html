@@ -84,6 +84,26 @@
     .menu4:hover div{
         font-size: 1em;
     }
+    .pagecontent1{
+        position: absolute;
+        left: 0;
+        width: 20%;
+    }
+    .subpagecontent1{
+        width: 100%;
+        height: 2em;
+        float: left;
+    }
+    @keyframes subpagecontent1 {
+    from {background-color: rgb(247, 238, 238);}
+    to {background-color: rgb(243, 243, 234);}
+    }
+    .subpagecontent1:nth-of-type(1){
+        background-color: rgb(206, 195, 195);
+    animation-name: subpagecontent1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    }
     </style>
 </head>
 <body>
@@ -108,7 +128,15 @@
         </div>
     </div>
     <div class="pagecontent">
-
+        <div class="pagecontent1">
+            <div class="subpagecontent1"></div>
+            <div class="subpagecontent1"></div>
+            <div class="subpagecontent1"></div>
+            <div class="subpagecontent1"></div>
+            <div class="subpagecontent1"></div>
+        </div>
+        <div class="pagecontent2"></div>
+        <div class="pagecontent3"></div>
     </div>
     <!--<a href="#" onclick="signOut();">Sign out</a>-->
     <script>
