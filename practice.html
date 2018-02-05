@@ -161,6 +161,11 @@
     animation-iteration-count: infinite;
     animation-delay: 7s;
     }
+    .pagecontent3{
+        position: absolute;
+        left: 22%;
+        width: 78%;
+    }
     </style>
 </head>
 <body>
@@ -203,6 +208,7 @@
         document.getElementsByClassName("menus")[0].style.height=.1*document.documentElement.clientHeight+"px";
         document.getElementsByClassName("pagecontent")[0].style.height=.88*document.documentElement.clientHeight+"px";
         document.getElementsByClassName("pagecontent")[0].style.top=.20*document.documentElement.clientHeight+"px";
+        document.getElementsByClassName("pagecontent")[2].style.top=.12*document.documentElement.clientHeight+"px";
         function onSignIn(googleUser) {
             document.getElementsByClassName("menus")[0].style.display="block";
             document.getElementsByClassName("pagecontent")[0].style.display="block";
@@ -249,7 +255,7 @@
                 }
                 table.appendChild(tr);
             }
-            document.getElementsByClassName("subpagecontent3")[0].appendChild(table);
+            document.getElementsByClassName("pagecontent3")[0].appendChild(table);
           }, function(reason) {
             console.error('error: ' + reason.result.error.message);
           });
