@@ -96,8 +96,11 @@
         padding: 2px;
     }
     @keyframes subpagecontent11 {
-    from {background-color: rgb(247, 238, 238);}
-    to {background-color: rgb(243, 243, 234);}
+    0% {background-color: rgb(247, 238, 238);}
+    25% {background-color: rgb(247, 247, 196);}
+    50% {background-color: rgb(170, 238, 212);}
+    75% {background-color: rgb(173, 171, 247);}
+    100% {background-color: rgb(235, 143, 181);}
     }
     .subpagecontent1:nth-of-type(1){
         background-color: rgb(206, 195, 195);
@@ -105,15 +108,26 @@
     animation-duration: 4s;
     animation-iteration-count: infinite;
     }
-    @keyframes subpagecontent12 {
-    from {background-color: rgb(223, 238, 171);}
-    to {background-color: rgb(212, 212, 198);}
-    }
     .subpagecontent1:nth-of-type(2){
         background-color: rgb(206, 195, 195);
-    animation-name: subpagecontent12;
+    animation-name: subpagecontent11;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+    animation-delay: 1s;
+    }
+    .subpagecontent1:nth-of-type(3){
+        background-color: rgb(206, 195, 195);
+    animation-name: subpagecontent11;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    }
+    .subpagecontent1:nth-of-type(4){
+        background-color: rgb(206, 195, 195);
+    animation-name: subpagecontent11;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
     }
     </style>
 </head>
