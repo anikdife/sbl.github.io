@@ -36,11 +36,30 @@
         background: linear-gradient(#e5f1da,#f5e1e1);
         margin: .5em;
         border-radius: .5em;
+        padding: .5em;
     }
     .menu1,.menu2,.menu3,.menu4{
         margin: .5em;
+        transition: all .5s;
     }
+    .menu1:hover,.menu2:hover,.menu3:hover,.menu4:hover{
+        box-shadow:
+        0 1px 1px rgba(0,0,0,0.15), /* The top layer shadow */
+        0 10px 0 -5px #eee, /* The second layer */
+        0 10px 1px -4px rgba(0,0,0,0.15), /* The second layer shadow */
+        0 20px 0 -10px #eee, /* The third layer */
+        0 20px 1px -9px rgba(0,0,0,0.15); /* The third layer shadow */
+        }
     .menu1:hover div{
+        font-size: 1em;
+    }
+    .menu2:hover div{
+        font-size: 1em;
+    }
+    .menu3:hover div{
+        font-size: 1em;
+    }
+    .menu4:hover div{
         font-size: 1em;
     }
     </style>
