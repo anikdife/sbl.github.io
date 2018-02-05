@@ -12,12 +12,17 @@
     }
     .g-signin2 > div{
     margin: 0 auto;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     }
     </style>
 </head>
 <body>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
+    document.getElementsByClassName("g-signin2")[0].style.lineHeight=document.documentElement.clientHeight+"px";
     function onSignIn(googleUser) {
         //document.getElementsByClassName("g-signin2")[0].style.display="none";
         var profile = googleUser.getBasicProfile();
