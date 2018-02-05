@@ -7,18 +7,16 @@
     <meta name="google-signin-client_id" content="540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
-    .g-signin2{
-    width: 100%;
-    }
-    .g-signin2 > div{
-    margin: 0 auto;
+    .signin{
+        
     }
     </style>
 </head>
 <body>
-    <div class="g-signin2" data-onsuccess="onSignIn">Sign in</div>
+    <!--<div class="g-signin2" data-onsuccess="onSignIn">Sign in</div>-->
+    <div class="signin" data-onsuccess="onSignIn">Sign in</div>
     <script>
-    document.getElementsByClassName("g-signin2")[0].style.lineHeight=document.documentElement.clientHeight+"px";
+    document.getElementsByClassName("signin")[0].style.lineHeight=document.documentElement.clientHeight+"px";
     function onSignIn(googleUser) {
         //document.getElementsByClassName("g-signin2")[0].style.display="none";
         var profile = googleUser.getBasicProfile();
