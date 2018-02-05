@@ -19,6 +19,7 @@
         width: 100%;
         left: 0;
         top: 0;
+        background: linear-gradient(white, #e6e0e5ee);
     }
     .menus>div{
         float: left;
@@ -48,6 +49,7 @@
     </div>
     <!--<a href="#" onclick="signOut();">Sign out</a>-->
     <script>
+        document.getElementsByClassName("menus")[0].style.height=.1*document.documentElement.clientHeight+"px";
         function onSignIn(googleUser) {
             document.getElementsByClassName("menus")[0].style.display="block";
             document.getElementsByClassName("g-signin2")[0].style.display="block";
