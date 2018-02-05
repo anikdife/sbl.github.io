@@ -13,29 +13,49 @@
     .g-signin2 > div{
     margin: 0 auto;
     }
-    body  {
-        background: url("sblbd.jpg") no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+    .menus{
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
     }
     </style>
 </head>
 <body>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <script>
-    //document.getElementsByClassName("signin")[0].style.lineHeight=document.documentElement.clientHeight+"px";
-    function onSignIn(googleUser) {
-        //document.getElementsByClassName("g-signin2")[0].style.display="none";
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
-    </script>
+    
+    <div class="menus">
+        <div class="menu1">Case
+            <div>Case Entry</div>
+            <div>Case Modification</div>
+        </div>
+        <div class="menu2">Report
+            <div>Case Entry</div>
+            <div>Case Modification</div>
+        </div>
+        <div class="menu3">BLA
+            <div>Case Entry</div>
+            <div>Case Modification</div>
+        </div>
+        <div class="menu4"><img src="" alt="">
+            <div>Case Entry</div>
+            <div onclick="signOut()">Sign out</div>
+        </div>
+    </div>
     <!--<a href="#" onclick="signOut();">Sign out</a>-->
+    <script>
+        function onSignIn(googleUser) {
+            document.getElementsByClassName("menus")[0].style.display="block";
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            document.getElementsByClassName("menu4")[0].childNodes[0].setAttribute("src",profile.getImageUrl());
+            document.getElementsByClassName("menu4")[0].childNodes[1].innerHTML=profile.getEmail();
+            }
+    </script>
     <script>
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
