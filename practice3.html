@@ -9,21 +9,6 @@
 <body>
     <div class="g-signin2"></div>
     <script>
-        /*
-        function init() {
-            gapi.load('client:auth2', function() { 
-             gapi.client.init({
-            'apiKey':"AIzaSyA2uk3q1u8Z2g5dXQEovn9QD7sNqkxlhTM",
-            "discoveryDocs":["https://www.googleapis.com/discovery/v1/apis/plus/v1/rest"],
-            "clientId":"540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
-            "scope":"https://www.googleapis.com/auth/userinfo.profile"
-            }).then(
-                function(){
-                    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
-                }
-            );
-        }
-        */
         function init(){
             gapi.load(
                 'client:auth2',function(){
@@ -35,6 +20,7 @@
                     }).then(
                         function(){
                             gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+                            updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
                         }
                     )
                 }
