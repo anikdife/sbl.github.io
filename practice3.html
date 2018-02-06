@@ -16,8 +16,11 @@
             "discoveryDocs":["https://www.googleapis.com/discovery/v1/apis/plus/v1/rest"],
             "clientId":"540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
             "scope":"https://www.googleapis.com/auth/userinfo.profile"
-            });
-            });
+            }).then(
+                function(){
+                    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+                }
+            );
         }
         /*
         function initGapi(){
