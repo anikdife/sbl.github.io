@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>gapi practice</title>
+    <script src="https://apis.google.com/js/platform.js?" async defer></script>
+</head>
+<body>
+    <div class="signin" onclick="signIn()">Sign in</div>
+    <script>
+        function signIn(){
+            gapi.load('auth2', function () {
+                auth2 = gapi.auth2.init({
+                    client_id: "540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
+                    fetch_basic_profile: true,
+                    scope: 'profile'
+                });
+
+                // Sign the user in, and then retrieve their ID.
+                auth2.signIn().then(function () {
+                    initClient();
+                    console.log(auth2.currentUser.get().getId());
+                    var profile = auth2.currentUser.get().getBasicProfile();
+                    console.log('ID: ' + profile.getId());
+                    console.log('Full Name: ' + profile.getName());
+                    console.log('Given Name: ' + profile.getGivenName());
+                    console.log('Family Name: ' + profile.getFamilyName());
+                    console.log('Image URL: ' + profile.getImageUrl());
+                    console.log('Email: ' + profile.getEmail());
+                });
+            });
+        }
+
+        function initClient() {
+          var API_KEY = 'AIzaSyA2uk3q1u8Z2g5dXQEovn9QD7sNqkxlhTM';  // TODO: Update placeholder with desired API key.
+          var CLIENT_ID = '540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+          // TODO: Authorize using one of the following scopes:, 'https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.file','https://www.googleapis.com/auth/drive.readonly','https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/spreadsheets.readonly'
+          var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
+          var DISCOVERYDOCS=['https://sheets.googleapis.com/$discovery/rest?version=v4'];
+          gapi.client.init({
+            'apiKey': API_KEY,
+            'clientId': CLIENT_ID,
+            'scope': SCOPE,
+            'discoveryDocs':DISCOVERYDOCS// ['https://sheets.googleapis.com/$discovery/rest?version=v4'],//'https://www.googleapis.com/discovery/v1/apis/plus/v1/rest'],
+          }).then(function() {
+            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+            updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          });
+        }
+
+        function updateSignInStatus(status){
+            if(status){
+                console.log("you are signed in");
+               // gapi.auth2.getAuthInstance().init();
+            }
+        }
+        
+    </script>
+</body>
+</html>
