@@ -10,6 +10,21 @@
     <div class="signin" onclick="signIn()">Sign in</div>
     <script>
         function init(){
+        gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+        client_id: "540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
+        fetch_basic_profile: false,
+        scope: 'profile'
+        });
+
+         // Sign the user in, and then retrieve their ID.
+        auth2.signIn().then(function() {
+        console.log(auth2.currentUser.get().getId());
+        });
+        });
+        }
+        /*
+        function init(){
             gapi.load(
                 'client:auth2',function(){
                     gapi.client.init({
@@ -35,6 +50,7 @@
         function signIn(){
             gapi.auth2.getAuthInstance().signIn();
         }
+        */
     </script>
 </body>
 </html>
