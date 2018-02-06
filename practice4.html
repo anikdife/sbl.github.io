@@ -226,8 +226,8 @@
                     document.getElementsByClassName("menus")[0].style.display="block";
                     document.getElementsByClassName("pagecontent")[0].style.display="block";
                     document.getElementsByClassName("menu4")[0].childNodes[0].src=""+profile.getImageUrl();
-                    document.getElementsByClassName("menu4")[0].childNodes[1].src=""+profile.getEmail();
-                    document.getElementsByClassName("menu4")[0].childNodes[2].innerHTML=""+profile.getName();
+                    document.getElementsByClassName("menu4")[0].childNodes[2].src=""+profile.getEmail();
+                    document.getElementsByClassName("menu4")[0].childNodes[3].innerHTML=""+profile.getName();
                 });
             });
         }
@@ -288,22 +288,14 @@
         }
         */
         
-        function signOut() {
-            var token = gapi.auth.getToken();
-            if (token) {
-              var accessToken = gapi.auth.getToken().access_token;
-              if (accessToken) {
-                // make http get request towards: 'https://accounts.google.com/o/oauth2/revoke?token=' + accessToken
-                // In angular you can do it like this:
-                // $http({
-                //   method: 'GET',
-                //   url: 'https://accounts.google.com/o/oauth2/revoke?token=' + accessToken
-                // });
+        
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                  console.log('User signed out.');
+                });
               }
-            }
-            gapi.auth.setToken(null);
-            gapi.auth.signOut();
-        }
+        
     </script>
 </body>
 </html>
