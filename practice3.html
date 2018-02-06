@@ -7,19 +7,18 @@
     <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </head>
 <body>
-    <div class="g-signin2"></div>
+    <div class="signin" onclick="signIn()">Sign in</div>
     <script>
         function init(){
             gapi.load(
                 'client:auth2',function(){
                     gapi.client.init({
                     'apiKey':"AIzaSyA2uk3q1u8Z2g5dXQEovn9QD7sNqkxlhTM",
-                    "clientId":"540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
+                    "client_id":"540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
                     "scope":"https://www.googleapis.com/auth/userinfo.profile",
                     "discoveryDocs":["https://www.googleapis.com/discovery/v1/apis/plus/v1/rest"]
                     }).then(
                         function(){
-                            gapi.auth2.getAuthInstance().signIn();
                             gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
                             updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
                         }
@@ -31,6 +30,9 @@
             if(status){
 
             }
+        }
+        function signIn(){
+            gapi.auth2.getAuthInstance().signIn();
         }
     </script>
 </body>
