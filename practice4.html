@@ -282,19 +282,14 @@
             console.error('error: ' + reason.result.error.message);
           });
         }
-        /*
-        function signOut(event) {
-          gapi.auth2.getAuthInstance().signOut();
+        
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.then(function () {
+            console.log('User signed out.');
+            gapi.auth2.GoogleAuth.signOut();
+            });
         }
-        */
-        
-        
-            function signOut() {
-                var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                  console.log('User signed out.');
-                });
-              }
         
     </script>
 </body>
