@@ -171,7 +171,7 @@
 </head>
 <body>
     <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
-    <div class="g-signin2" onclick="handleSignInClick(event)"  data-onsuccess="onSignIn">Signin</div>
+    <div class="g-signin2" onclick="handleSignInClick(event)">Signin</div>
     
     <div class="menus">
         <div class="menu1">Case
@@ -272,9 +272,10 @@
             'apiKey': API_KEY,
             'clientId': CLIENT_ID,
             'scope': SCOPE,
-            'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+            'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4','https://www.googleapis.com/discovery/v1/apis/plus/v1/rest'],
           }).then(function() {
             gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+            console.log(updateSignInStatus);
             //updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           });
         }
