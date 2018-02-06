@@ -198,6 +198,12 @@
     </div>
 
     <script>
+        document.getElementsByClassName("menus")[0].style.height=.1*document.documentElement.clientHeight+"px";
+        document.getElementsByClassName("pagecontent")[0].style.height=.85*document.documentElement.clientHeight+"px";
+        document.getElementsByClassName("pagecontent3")[0].style.height=.85*document.documentElement.clientHeight+"px";
+        document.getElementsByClassName("pagecontent1")[0].style.top=.20*document.documentElement.clientHeight+"px";
+        document.getElementsByClassName("pagecontent3")[0].style.top=.12*document.documentElement.clientHeight+"px";
+
         function signIn(){
             gapi.load('auth2', function () {
                 auth2 = gapi.auth2.init({
@@ -217,6 +223,8 @@
                     console.log('Family Name: ' + profile.getFamilyName());
                     console.log('Image URL: ' + profile.getImageUrl());
                     console.log('Email: ' + profile.getEmail());
+                    document.getElementsByClassName("menus")[0].style.display="block";
+                    document.getElementsByClassName("pagecontent")[0].style.display="block";
                 });
             });
         }
