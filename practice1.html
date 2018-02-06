@@ -275,7 +275,7 @@
             'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4','https://www.googleapis.com/discovery/v1/apis/plus/v1/rest'],
           }).then(function() {
             gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
-            //updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           });
         }
     
@@ -285,7 +285,7 @@
     
         function updateSignInStatus(isSignedIn) {
           if (isSignedIn) {
-            makeApiCall();
+            //makeApiCall();
           }
         }
     
