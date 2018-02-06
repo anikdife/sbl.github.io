@@ -29,6 +29,7 @@
         function updateSignInStatus(status){
             if(status){
                 console.log("you are signed in");
+                gapi.auth2.getAuthInstance().init();
             }
         }
         function signIn(){
