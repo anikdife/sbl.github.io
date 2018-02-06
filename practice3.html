@@ -4,31 +4,31 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>gapi practice</title>
-    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?" async defer></script>
 </head>
 <body>
     <div class="signin" onclick="signIn()">Sign in</div>
     <script>
-        function init(){
-        gapi.load('auth2', function() {
-        auth2 = gapi.auth2.init({
-        client_id: "540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
-        fetch_basic_profile: true,
-        scope: 'profile'
-        });
+        function signIn(){
+            gapi.load('auth2', function () {
+                auth2 = gapi.auth2.init({
+                    client_id: "540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com",
+                    fetch_basic_profile: true,
+                    scope: 'profile'
+                });
 
-         // Sign the user in, and then retrieve their ID.
-        auth2.signIn().then(function() {
-        console.log(auth2.currentUser.get().getId());
-        var profile = auth2.currentUser.get().getBasicProfile();
-  console.log('ID: ' + profile.getId());
-  console.log('Full Name: ' + profile.getName());
-  console.log('Given Name: ' + profile.getGivenName());
-  console.log('Family Name: ' + profile.getFamilyName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail());
-        });
-        });
+                // Sign the user in, and then retrieve their ID.
+                auth2.signIn().then(function () {
+                    console.log(auth2.currentUser.get().getId());
+                    var profile = auth2.currentUser.get().getBasicProfile();
+                    console.log('ID: ' + profile.getId());
+                    console.log('Full Name: ' + profile.getName());
+                    console.log('Given Name: ' + profile.getGivenName());
+                    console.log('Family Name: ' + profile.getFamilyName());
+                    console.log('Image URL: ' + profile.getImageUrl());
+                    console.log('Email: ' + profile.getEmail());
+                });
+            });
         }
         /*
         function init(){
