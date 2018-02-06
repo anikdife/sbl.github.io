@@ -9,7 +9,6 @@
 <body>
     <div class="g-signin2"></div>
     <script>
-        gapi.load("client:auth2",initGapi);
         function initGapi(){
             gapi.client.init({
             'apiKey':"AIzaSyA2uk3q1u8Z2g5dXQEovn9QD7sNqkxlhTM",
@@ -18,7 +17,9 @@
             "scope":"https://www.googleapis.com/auth/userinfo.profile"
             });
         }
-    
+        gapi.load("client:auth2",initGapi).then(function(){
+            
+        });    
     </script>
 </body>
 </html>
