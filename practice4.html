@@ -19,7 +19,7 @@
 
                 // Sign the user in, and then retrieve their ID.
                 auth2.signIn().then(function () {
-                    initClient();
+                    gapi.load('client:auth2', initClient);
                     console.log(auth2.currentUser.get().getId());
                     var profile = auth2.currentUser.get().getBasicProfile();
                     console.log('ID: ' + profile.getId());
