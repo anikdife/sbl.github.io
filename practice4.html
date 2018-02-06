@@ -77,7 +77,8 @@
                 }
                 table.appendChild(tr);
             }
-            document.getElementsByClassName("pagecontent3")[0].appendChild(table);
+            //document.getElementsByClassName("pagecontent3")[0].appendChild(table);
+            document.body.appendChild(table);
           }, function(reason) {
             console.error('error: ' + reason.result.error.message);
           });
