@@ -179,6 +179,7 @@
         </div>
         <div class="menu4"><img src="" alt="" height="20" width="20">
             <div>Case Entry</div>
+            <div>Case Entry</div>
             <div onclick="signOut()">Sign out</div>
         </div>
     </div>
@@ -226,6 +227,7 @@
                     document.getElementsByClassName("menus")[0].style.display="block";
                     document.getElementsByClassName("pagecontent")[0].style.display="block";
                     document.getElementsByClassName("menu4")[0].childNodes[0].src=""+profile.getImageUrl();
+                    document.getElementsByClassName("menu4")[0].childNodes[1].src=""+profile.getEmail();
                     document.getElementsByClassName("menu4")[0].childNodes[2].innerHTML=""+profile.getName();
                 });
             });
