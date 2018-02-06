@@ -19,6 +19,7 @@
                     "scope":"https://www.googleapis.com/auth/userinfo.profile"
                     }).then(
                         function(){
+                            gapi.auth2.getAuthInstance().signIn();
                             gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
                             updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
                         }
