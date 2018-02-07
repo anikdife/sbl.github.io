@@ -217,6 +217,7 @@
             const targetElement=document.getElementsByClassName("pagecontent3")[0];
             const iframe = document.createElement('iframe');
             iframe.src = dataUrl;
+            iframe.setAttribute("style","width:100%;height:100%;border:none;");
             targetElement.appendChild(iframe);
             });
         }
