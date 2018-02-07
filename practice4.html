@@ -209,6 +209,11 @@
 
     <script>
         var yes=false;
+        function showState(yes){
+            document.getElementsByClassName("menus")[0].style.display=yes?"block":"none";
+            document.getElementsByClassName("pagecontent")[0].style.display=yes?"block":"none";
+            document.getElementsByClassName("signin")[0].style.display=yes?"none":"block";
+        }
         document.getElementsByClassName("menus")[0].style.height=.1*document.documentElement.clientHeight+"px";
         document.getElementsByClassName("pagecontent")[0].style.height=.85*document.documentElement.clientHeight+"px";
         document.getElementsByClassName("pagecontent3")[0].style.height=.85*document.documentElement.clientHeight+"px";
@@ -226,17 +231,14 @@
                 // Sign the user in, and then retrieve their ID.
                 auth2.signIn().then(function () {
                     gapi.load('client:auth2', initClient);
-                    console.log(auth2.currentUser.get().getId());
+                    showState(auth2.currentUser.get().getId());
                     var profile = auth2.currentUser.get().getBasicProfile();
                     console.log('ID: ' + profile.getId());
                     console.log('Full Name: ' + profile.getName());
                     console.log('Given Name: ' + profile.getGivenName());
                     console.log('Family Name: ' + profile.getFamilyName());
                     console.log('Image URL: ' + profile.getImageUrl());
-                    console.log('Email: ' + profile.getEmail());
-                    document.getElementsByClassName("menus")[0].style.display="block";
-                    document.getElementsByClassName("signin")[0].style.display="none";
-                    document.getElementsByClassName("pagecontent")[0].style.display="block";
+                    console.log('Email: ' + profile.getEmail());                  
                     document.getElementsByClassName("menu4")[0].childNodes[0].src=""+profile.getImageUrl();
                     document.getElementsByClassName("menu4")[0].childNodes[2].src=""+profile.getEmail();
                     document.getElementsByClassName("menu4")[0].childNodes[3].innerHTML=""+profile.getName();
@@ -301,10 +303,7 @@
             auth2.signOut().then(
                 function(){
                     console.log("you are signed out");
-                    console.log(auth2.isSignedIn.get());
-                    document.getElementsByClassName("menus")[0].style.display="none";
-                    document.getElementsByClassName("signin")[0].style.display="block";
-                    document.getElementsByClassName("pagecontent")[0].style.display="none";
+                    showState(auth2.isSignedIn.get());
                 }
             )
         }
