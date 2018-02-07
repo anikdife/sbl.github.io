@@ -240,8 +240,8 @@
                     console.log('Image URL: ' + profile.getImageUrl());
                     console.log('Email: ' + profile.getEmail());                  
                     document.getElementsByClassName("menu4")[0].childNodes[0].src=""+profile.getImageUrl();
-                    document.getElementsByClassName("menu4")[0].childNodes[2].src=""+profile.getEmail();
-                    document.getElementsByClassName("menu4")[0].childNodes[3].innerHTML=""+profile.getName();
+                    document.getElementsByClassName("menu4")[0].childNodes[2].innerHTML=""+profile.getEmail();
+                    document.getElementsByClassName("menu4")[0].childNodes[4].innerHTML=""+profile.getName();
                 });
             });
         }
