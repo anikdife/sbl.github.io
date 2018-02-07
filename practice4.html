@@ -224,6 +224,7 @@
           var request = gapi.client.sheets.spreadsheets.values.get(params);
           request.then(function(response) {
               docDefinition={
+                  pageSize:{width:400,height:600},
                 content:[
                     {
                         table:{
