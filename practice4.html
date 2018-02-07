@@ -212,6 +212,13 @@
         function getCompleteListBLA(){
             var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
             pdfMake.createPdf(docDefinition).print();
+            const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+            pdfDocGenerator.getDataUrl((dataUrl) => {
+            const targetElement=document.getElementsByClassName("pagecontent3")[0];
+            const iframe = document.createElement('iframe');
+            iframe.src = dataUrl;
+            targetElement.appendChild(iframe);
+            });
         }
     </script>
     <script>
