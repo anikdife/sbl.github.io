@@ -181,11 +181,11 @@
             <div>Case Modification</div>
         </div>
         <div class="menu2">Report
-            <div>Case Entry</div>
+            <div>Complete list</div>
             <div>Case Modification</div>
         </div>
         <div class="menu3">BLA
-            <div>Case Entry</div>
+            <div onclick="getCompleteListBLA()">Complete list of BLA</div>
             <div>Case Modification</div>
         </div>
         <div class="menu4"><img src="" alt="" height="20" width="20">
@@ -208,7 +208,12 @@
         <div class="pagecontent2"></div>
         <div class="pagecontent3"></div>
     </div>
-
+    <script id="bla">
+        function getCompleteListBLA(){
+            var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
+            pdfMake.createPdf(docDefinition).print();
+        }
+    </script>
     <script>
         var yes=false;
         function showState(yes){
