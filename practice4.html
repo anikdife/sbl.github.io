@@ -217,7 +217,7 @@
         function getListBLA(num){
             var params = {
             spreadsheetId: '1pav1lOsf5mOVjOF9s7hwD4jstzehaAZjcc1vCVVJ5MU',  // TODO: Update placeholder value.
-            range: ['Enlisted!A1:F100','Canceled!A1:F3'][num],  // TODO: Update placeholder value.
+            range: ['Enlisted!A1:F100','Canceled!A1:G3'][num],  // TODO: Update placeholder value.
             valueRenderOption: 'FORMATTED_VALUE',  // TODO: Update placeholder value.
             dateTimeRenderOption: 'SERIAL_NUMBER',  // TODO: Update placeholder value.
           };
@@ -230,7 +230,7 @@
                         table:{
                             headerRows:1,
                             //widths:["Sl No.","Name of Region","Name of Lawyer","Senior Panel Lawyer/Panel Lawyer","Date of Enlistment/Renewal & Expiry","Address with contact no."],
-                            widths:["5%","15%","15%","15%","15%","35%"],
+                            widths:[["5%","15%","15%","15%","15%","35%"],["5%","15%","15%","15%","15%","15%","20%"]],
                             body: response.result.values
                         }
                     }
