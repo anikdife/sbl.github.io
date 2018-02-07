@@ -239,6 +239,7 @@
               const pdfDocGenerator = pdfMake.createPdf(docDefinition);
             pdfDocGenerator.getDataUrl((dataUrl) => {
             const targetElement=document.getElementsByClassName("pagecontent3")[0];
+            document.getElementsByClassName("pagecontent3")[0].innerHTML="";
             const iframe = document.createElement('iframe');
             iframe.src = dataUrl;
             iframe.setAttribute("id","iframe");
