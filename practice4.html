@@ -159,6 +159,15 @@
         width: 78%;
         overflow: scroll;
     }
+    .signin{
+        margin: 0 auto;
+        vertical-align: middle;
+        background: linear-gradient(#f0bfbf,#bef3be);
+        border-radius: 1em;
+        padding: 1em;
+        font-size: 1em;
+        text-align: center;
+    }
     </style>
 </head>
 <body>
@@ -199,6 +208,7 @@
 
     <script>
         document.getElementsByClassName("menus")[0].style.height=.1*document.documentElement.clientHeight+"px";
+        document.getElementsByClassName("signin")[0].style.lineHeight=document.documentElement.clientHeight+"px";
         document.getElementsByClassName("pagecontent")[0].style.height=.85*document.documentElement.clientHeight+"px";
         document.getElementsByClassName("pagecontent3")[0].style.height=.85*document.documentElement.clientHeight+"px";
         document.getElementsByClassName("pagecontent1")[0].style.top=.20*document.documentElement.clientHeight+"px";
@@ -285,13 +295,7 @@
         
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
-            console.log(auth2.isSignedIn.get());
-            /*
-            auth2.then(function () {
-            console.log('User signed out.');
-            gapi.auth2.GoogleAuth.signOut();
-            });
-            */
+            console.log(auth2.isSignedIn.get());         
             auth2.signOut();
         }
         
