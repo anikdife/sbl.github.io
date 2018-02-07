@@ -235,11 +235,7 @@
                     }
                 ]
               };
-            
-          }, function(reason) {
-            console.error('error: ' + reason.result.error.message);
-          });
-          const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+              const pdfDocGenerator = pdfMake.createPdf(docDefinition);
             pdfDocGenerator.getDataUrl((dataUrl) => {
             const targetElement=document.getElementsByClassName("pagecontent3")[0];
             const iframe = document.createElement('iframe');
@@ -247,6 +243,11 @@
             iframe.setAttribute("id","iframe");
             targetElement.appendChild(iframe);
             });
+            
+          }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+          });
+          
         }
     </script>
     <script>
