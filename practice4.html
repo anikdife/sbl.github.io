@@ -301,14 +301,12 @@
             auth2.signOut().then(
                 function(){
                     console.log("you are signed out");
+                    console.log(auth2.isSignedIn.get());
+                    document.getElementsByClassName("menus")[0].style.display="none";
+                    document.getElementsByClassName("signin")[0].style.display="block";
+                    document.getElementsByClassName("pagecontent")[0].style.display="none";
                 }
             )
-            console.log(auth2.isSignedIn.get());
-            if(!auth2.isSignedIn.get()){
-                document.getElementsByClassName("menus")[0].style.display="none";
-                document.getElementsByClassName("signin")[0].style.display="block";
-                document.getElementsByClassName("pagecontent")[0].style.display="none";
-            }
         }
         
     </script>
