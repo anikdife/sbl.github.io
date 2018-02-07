@@ -215,7 +215,7 @@
     <script id="bla">
         function getCompleteListBLA(){
             var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
-            pdfMake.createPdf(docDefinition).print();
+            //pdfMake.createPdf(docDefinition).print();
             const pdfDocGenerator = pdfMake.createPdf(docDefinition);
             pdfDocGenerator.getDataUrl((dataUrl) => {
             const targetElement=document.getElementsByClassName("pagecontent3")[0];
@@ -224,6 +224,32 @@
             iframe.setAttribute("id","iframe");
             targetElement.appendChild(iframe);
             });
+            var params = {
+            spreadsheetId: '1pav1lOsf5mOVjOF9s7hwD4jstzehaAZjcc1vCVVJ5MU',  // TODO: Update placeholder value.
+            range: 'Enlisted!A2:F100',  // TODO: Update placeholder value.
+            valueRenderOption: 'FORMATTED_VALUE',  // TODO: Update placeholder value.
+            dateTimeRenderOption: 'SERIAL_NUMBER',  // TODO: Update placeholder value.
+          };
+          var request = gapi.client.sheets.spreadsheets.values.get(params);
+          request.then(function(response) {
+            /*/console.log(response.result.values);
+            alert("you are okay");
+            var table=document.createElement('table');
+            for(var i=0;i<response.result.values.length;i++){
+                var tr=document.createElement('tr');
+                for(var j=0;j<6;j++){
+                    var td=document.createElement('td');
+                    td.innerHTML=response.result.values[i][j];
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            document.getElementsByClassName("pagecontent3")[0].appendChild(table);
+            */
+            console.log(response);
+          }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+          });
         }
     </script>
     <script>
