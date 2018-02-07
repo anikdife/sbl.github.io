@@ -213,7 +213,6 @@
         <div class="pagecontent3"></div>
     </div>
     <script id="bla">
-        var docDefinition={};
         function getCompleteListBLA(){
             var params = {
             spreadsheetId: '1pav1lOsf5mOVjOF9s7hwD4jstzehaAZjcc1vCVVJ5MU',  // TODO: Update placeholder value.
@@ -223,7 +222,7 @@
           };
           var request = gapi.client.sheets.spreadsheets.values.get(params);
           request.then(function(response) {
-              docDefinition={
+              var docDefinition={
                   pageSize:{width:400,height:600},
                 content:[
                     {
