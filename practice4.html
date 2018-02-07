@@ -189,7 +189,8 @@
             <div>Case Modification</div>
         </div>
         <div class="menu3">BLA
-            <div onclick="getCompleteListBLA()">Complete list of BLA</div>
+            <div onclick="getListBLA(0)">List of BLA</div>
+            <div onclick="getListBLA(1)">List of Canceled BLA</div>
             <div>Case Modification</div>
         </div>
         <div class="menu4"><img src="" alt="" height="20" width="20">
@@ -213,10 +214,10 @@
         <div class="pagecontent3"></div>
     </div>
     <script id="bla">
-        function getCompleteListBLA(){
+        function getListBLA(num){
             var params = {
             spreadsheetId: '1pav1lOsf5mOVjOF9s7hwD4jstzehaAZjcc1vCVVJ5MU',  // TODO: Update placeholder value.
-            range: 'Enlisted!A1:F100',  // TODO: Update placeholder value.
+            range: ['Enlisted!A1:F100','Canceled!A1:F3'][num],  // TODO: Update placeholder value.
             valueRenderOption: 'FORMATTED_VALUE',  // TODO: Update placeholder value.
             dateTimeRenderOption: 'SERIAL_NUMBER',  // TODO: Update placeholder value.
           };
