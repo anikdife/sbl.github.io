@@ -285,6 +285,7 @@
         
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
+            console.log(auth2.isSignedIn.get());
             /*
             auth2.then(function () {
             console.log('User signed out.');
