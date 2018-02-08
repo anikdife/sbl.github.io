@@ -59,8 +59,25 @@
           } else {
             // User is not signed in. Start Google auth flow.
             GoogleAuth.signIn();
-            var user = GoogleAuth.currentUser.get();
-            console.log(user.getBasicProfile());
+            gapi.client.init({
+                'apiKey': 'AIzaSyA2uk3q1u8Z2g5dXQEovn9QD7sNqkxlhTM',
+                'discoveryDocs': [discoveryUrl],
+                'clientId': '540071001357-0jsfmjc68ghf6an5d72jer3iqrum07ue.apps.googleusercontent.com',
+                'scope': SCOPE
+            }).then(function () {
+              GoogleAuth = gapi.auth2.getAuthInstance();
+        
+              // Listen for sign-in state changes.
+              GoogleAuth.isSignedIn.listen(updateSigninStatus);
+        
+              // Handle initial sign-in state. (Determine if user is already signed in.)
+              var user = GoogleAuth.currentUser.get();
+              console.log(user.getBasicProfile());
+              setSigninStatus();
+        
+              // Call handleAuthClick function when user clicks on
+              //      "Sign In/Authorize" button.
+            });
           }
         }
       
