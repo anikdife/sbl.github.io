@@ -59,6 +59,8 @@
           } else {
             // User is not signed in. Start Google auth flow.
             GoogleAuth.signIn();
+            var user = GoogleAuth.currentUser.get();
+            console.log(user.getBasicProfile());
           }
         }
       
